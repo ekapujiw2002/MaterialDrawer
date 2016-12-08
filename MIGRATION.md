@@ -1,4 +1,25 @@
 ###Upgrade Notes
+#### v5.8.0
+**IMPORTANT IF YOU USE THE FASTADAPTER OR MATERIALDRAWER**
+* You have to update your FastAdapter dependency to v2.1.0 with this release
+* See the MIGRATION information of the FastAdapter https://github.com/mikepenz/FastAdapter/blob/develop/MIGRATION.md
+
+#### v5.7.0
+**IMPORTANT IF YOU IMPLEMENT CUSTOM-DRAWER-ITEMS OR USE THE FASTADAPTER**
+* You have to update your `FastAdapter` dependency to v2.0.0 with this release
+* If you have `CustomDrawerItem`'s not based on the `AbstractDrawerITems` make sure you implement the `unbindView` method, and the new required methods
+* See the MIGRATION information of the **FastAdapter** https://github.com/mikepenz/FastAdapter/blob/develop/MIGRATION.md
+
+#### v5.6.0
+**IMPORTANT IF YOU IMPLEMENT CUSTOM-DRAWER-ITEMS OR USE THE FASTADAPTER**
+* This release brings a breaking interface change. Your items now have to implement `bindView(ViewHolder holder, List payloads)` instead of `bindView(VH holder)`. 
+ * The additional payload can be used to implement a more performant view updating when only parts of the item have changed. Please also refer to the `DiffUtils` which may provide the payload.
+
+#### v5.5.1
+* add `void set(ImageView imageView, Uri uri, Drawable placeholder, String tag);` to `IDrawerImageLoader` interface, similar to the `tag` provided in the placeholder method
+
+#### v5.5.0
+* **Dropping support for API < 14. New MinSdkVersion is 14**
 
 #### v5.3.3 -> 5.3.4
 * If you use the `FastAdapter` please read the upgrade notes for v1.6.0 (https://github.com/mikepenz/FastAdapter/releases/tag/v1.6.0)

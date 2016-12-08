@@ -1,11 +1,11 @@
 buildscript {
     ext {
-        setup = [compileSdk: 24,
-                 buildTools: "24.0.0",
-                 minSdk    : 10,
-                 targetSdk : 24]
+        setup = [compileSdk: 25,
+                 buildTools: "25.0.0",
+                 minSdk    : 14,
+                 targetSdk : 25]
 
-        versions = [supportLib: "24.0.0"]
+        versions = [supportLib: "25.0.1"]
     }
 
     repositories {
@@ -13,7 +13,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.android.tools.build:gradle:2.2.2'
         classpath 'com.novoda:bintray-release:0.3.4'
     }
 }
@@ -27,5 +27,5 @@ allprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
+    gradleVersion = '2.14.1'
 }
